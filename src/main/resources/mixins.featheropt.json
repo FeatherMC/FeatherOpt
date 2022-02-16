@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.7.11",
+  "package": "net.digitalingot.featheropt.mixin",
+  "plugin": "net.digitalingot.featheropt.FeatherOptMixinPlugin",
+  "refmap": "mixins.featheropt.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "forge.MixinASMDataTable",
+    "forge.MixinBlockInfo",
+    "forge.MixinChunkCache",
+    "forge.MixinFluidRegistry",
+    "forge.MixinForgeBlockModelRenderer",
+    "forge.MixinForgeChunkManager",
+    "world.MixinWorld"
+  ]
+}
