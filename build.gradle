@@ -77,11 +77,16 @@ repositories {
     }
 }
 
+configurations {
+    embed
+    compile.extendsFrom(embed)
+}
+
 dependencies {
     implementation group: 'org.jetbrains', name: 'annotations', version: '16.0.2'
     annotationProcessor "org.spongepowered:mixin:0.7.11-SNAPSHOT"
     testAnnotationProcessor "org.spongepowered:mixin:0.7.11-SNAPSHOT"
-    implementation("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
+    embed("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
         transitive = false
     }
 }
@@ -91,11 +96,20 @@ processResources {
 }
 
 jar {
+    from {
+        configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
+    } {
+        exclude "LICENSE.txt", "META-INF/MANIFSET.MF", "META-INF/maven/**", "META-INF/*.RSA", "META-INF/*.SF"
+    }
+
     manifest {
-        attributes 'MixinConfigs': 'mixins.featheropt.json',
-                'FMLCorePluginContainsFMLMod': true,
-                "ModSide": "CLIENT",
-                'TweakClass': 'net.digitalingot.featheropt.FeatherOptTweaker',
-                'TweakOrder': '0'
+        attributes "FMLCorePlugin": "net.digitalingot.featheropt.FeatherCoreMod"
+        attributes "FMLCorePluginContainsFMLMod": "false"
+        attributes "ForceLoadAsMod": "true"
+        attributes "TweakClass": "org.spongepowered.asm.launch.MixinTweaker"
+        attributes "TweakOrder": "0"
+        attributes "MixinConfigs": "mixins.featheropt.json"
     }
 }
+
+jar.finalizedBy('reobfJar')

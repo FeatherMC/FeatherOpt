@@ -23,7 +23,6 @@ public class MixinWorld {
 
     @Redirect(method = "updateEntityWithOptionalForce", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/ImmutableSetMultimap;containsKey(Ljava/lang/Object;)Z", remap = false))
     public boolean featherOpt$containsKey(ImmutableSetMultimap<?, ?> multimap, Object key) {
-        System.out.println("abc");
         return !isRemote && multimap.containsKey(key);
     }
 
