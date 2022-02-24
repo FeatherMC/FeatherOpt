@@ -10,9 +10,14 @@
     "forge.MixinASMDataTable",
     "forge.MixinBlockInfo",
     "forge.MixinChunkCache",
+    "forge.MixinExtendedBlockState",
     "forge.MixinFluidRegistry",
     "forge.MixinForgeBlockModelRenderer",
     "forge.MixinForgeChunkManager",
+    "forge.MixinLightUtil",
+    "forge.MixinNetworkEventFiringHandler",
+    "forge.MixinVertexLighterFlat",
+    "renderer.MixinVertexFormat",
     "world.MixinWorld"
   ]
 }

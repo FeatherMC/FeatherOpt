@@ -1,6 +1,6 @@
 package net.digitalingot.featheropt.mixin.forge;
 
-import net.digitalingot.featheropt.IVertexLighterFlat;
+import net.digitalingot.featheropt.helpers.IVertexLighterFlat;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.resources.model.IBakedModel;

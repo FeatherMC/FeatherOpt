@@ -1,4 +1,4 @@
-package net.digitalingot.featheropt;
+package net.digitalingot.featheropt.helpers;
 
 public interface IBlockInfo {
     void updateFlatLighting();

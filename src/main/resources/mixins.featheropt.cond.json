@@ -3,6 +3,6 @@
   "forge.MixinFMLClientHandler": "patcher==0",
   "forge.MixinForgeBlockModelRendererCond": "patcher==0",
   "forge.MixinForgeHooksClient": "patcher==0",
-  "forge.MixinVertexLighterFlat": "patcher==0",
+  "forge.MixinVertexLighterFlatCond": "patcher==0",
   "forge.MixinVertexLighterSmoothAo": "patcher==0"
 }

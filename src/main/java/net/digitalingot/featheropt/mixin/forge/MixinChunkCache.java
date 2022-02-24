@@ -1,6 +1,6 @@
 package net.digitalingot.featheropt.mixin.forge;
 
-import net.digitalingot.featheropt.Constants;
+import net.digitalingot.featheropt.helpers.Constants;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.ChunkCache;
 import org.spongepowered.asm.mixin.Mixin;

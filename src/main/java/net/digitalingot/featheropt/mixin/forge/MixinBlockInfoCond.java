@@ -1,7 +1,7 @@
 package net.digitalingot.featheropt.mixin.forge;
 
-import net.digitalingot.featheropt.Constants;
-import net.digitalingot.featheropt.IBlockInfo;
+import net.digitalingot.featheropt.helpers.Constants;
+import net.digitalingot.featheropt.helpers.IBlockInfo;
 import net.minecraft.block.Block;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
