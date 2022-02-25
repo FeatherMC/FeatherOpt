@@ -1,6 +1,8 @@
 package net.digitalingot.featheropt.mixin.world;
 
 import com.google.common.collect.ImmutableSetMultimap;
+import net.digitalingot.featheropt.helpers.Constants;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

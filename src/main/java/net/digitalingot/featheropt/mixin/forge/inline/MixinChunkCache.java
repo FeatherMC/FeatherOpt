@@ -1,4 +1,4 @@
-package net.digitalingot.featheropt.mixin.forge;
+package net.digitalingot.featheropt.mixin.forge.inline;
 
 import net.digitalingot.featheropt.helpers.Constants;
 import net.minecraft.util.EnumFacing;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(ChunkCache.class)
 public class MixinChunkCache {
     @Redirect(method = "getLightForExt", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/EnumFacing;values()[Lnet/minecraft/util/EnumFacing;"))
-    private EnumFacing[] feather$getCachedArray() {
+    private EnumFacing[] featherOpt$getCachedArray() {
         return Constants.FACINGS;
     }
 }
