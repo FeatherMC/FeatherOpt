@@ -11,8 +11,6 @@ import net.minecraftforge.common.ForgeModContainer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
  * Backported from Forge 1.12.2:
@@ -21,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * https://github.com/MinecraftForge/MinecraftForge/commit/14f3120eedfee3bff4499ca64a62834c6e7ce3b7
  */
 @Mixin(ForgeHooksClient.class)
-public class MixinForgeHooksClient {
+public class MixinForgeHooksClient_FixSkyBlendColour {
 
     @Shadow(remap = false)
     private static int skyX;

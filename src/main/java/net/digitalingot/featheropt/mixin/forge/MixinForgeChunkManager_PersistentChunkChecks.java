@@ -22,7 +22,7 @@ import java.util.WeakHashMap;
  * @author bs2609
  */
 @Mixin(ForgeChunkManager.class)
-public class MixinForgeChunkManager {
+public class MixinForgeChunkManager_PersistentChunkChecks {
 
     @Shadow(remap = false)
     private static Map<World, ImmutableSetMultimap<ChunkCoordIntPair, ForgeChunkManager.Ticket>> forcedChunks;

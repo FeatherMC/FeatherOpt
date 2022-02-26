@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  * @author ichttt
  */
 @Mixin(value = ASMDataTable.class, remap = false)
-public class MixinASMDataTable {
+public class MixinASMDataTable_ParallelComputation {
 
     @Shadow(remap = false)
     private Map<ModContainer, SetMultimap<String, ASMDataTable.ASMData>> containerAnnotationData;

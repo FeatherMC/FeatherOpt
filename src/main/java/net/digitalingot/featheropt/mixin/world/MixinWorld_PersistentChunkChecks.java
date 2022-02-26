@@ -1,8 +1,6 @@
 package net.digitalingot.featheropt.mixin.world;
 
 import com.google.common.collect.ImmutableSetMultimap;
-import net.digitalingot.featheropt.helpers.Constants;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * @author bs2609
  */
 @Mixin(World.class)
-public class MixinWorld {
+public class MixinWorld_PersistentChunkChecks {
 
     @Shadow
     @Final
@@ -27,5 +25,4 @@ public class MixinWorld {
     public boolean featherOpt$containsKey(ImmutableSetMultimap<?, ?> multimap, Object key) {
         return !isRemote && multimap.containsKey(key);
     }
-
 }

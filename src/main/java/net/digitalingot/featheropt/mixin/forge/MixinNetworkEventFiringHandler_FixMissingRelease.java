@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * @author LexManos
  */
 @Mixin(value = NetworkEventFiringHandler.class, remap = false)
-public class MixinNetworkEventFiringHandler {
+public class MixinNetworkEventFiringHandler_FixMissingRelease {
 
     @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraftforge/fml/common/network/internal/FMLProxyPacket;)V", at = @At("TAIL"), remap = false)
     public void featherOpt$fixMissingRelease(ChannelHandlerContext ctx, FMLProxyPacket msg, CallbackInfo ci) {

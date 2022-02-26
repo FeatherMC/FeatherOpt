@@ -20,9 +20,9 @@ import org.spongepowered.asm.mixin.Overwrite;
  * @author bs2609 & LexManos
  */
 @Mixin(value = ExtendedBlockState.class, remap = false)
-public class MixinExtendedBlockState extends BlockState {
+public class MixinExtendedBlockState_ImprovedPerformance extends BlockState {
 
-    public MixinExtendedBlockState(Block blockIn, IProperty... properties) {
+    public MixinExtendedBlockState_ImprovedPerformance(Block blockIn, IProperty... properties) {
         super(blockIn, properties);
     }
 
@@ -31,11 +31,10 @@ public class MixinExtendedBlockState extends BlockState {
      * @reason Inject backported extended block state implementation
      */
     @Overwrite
-    protected BlockState.StateImplementation createState(Block block, @SuppressWarnings("rawtypes") ImmutableMap<IProperty, Comparable> properties, ImmutableMap<IUnlistedProperty<?>, Optional<?>> unlistedProperties) {
+    protected BlockState.StateImplementation createState(Block block, ImmutableMap<IProperty, Comparable> properties, ImmutableMap<IUnlistedProperty<?>, Optional<?>> unlistedProperties) {
         if (unlistedProperties == null || unlistedProperties.isEmpty())
             return super.createState(block, properties, unlistedProperties);
         return new ExtendedStateImplementation(block, properties, unlistedProperties, null, null);
-
     }
 
 }

@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * @author bs2609
  */
 @Mixin(ForgeBlockModelRenderer.class)
-public class MixinForgeBlockModelRendererCond {
+public class MixinForgeBlockModelRenderer_ShorterReferenceHolding {
 
     @Inject(method = "render", at = @At("RETURN"), remap = false)
     private static void feather$clean(VertexLighterFlat lighter, IBlockAccess quad, IBakedModel side, Block block, BlockPos world, WorldRenderer model, boolean checkSides, CallbackInfoReturnable<Boolean> cir) {

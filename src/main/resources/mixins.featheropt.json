@@ -7,12 +7,12 @@
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "forge.MixinASMDataTable",
-    "forge.MixinExtendedBlockState",
-    "forge.MixinFluidRegistry",
-    "forge.MixinForgeChunkManager",
+    "forge.MixinASMDataTable_ParallelComputation",
+    "forge.MixinExtendedBlockState_ImprovedPerformance",
+    "forge.MixinFluidRegistry$AvoidCopying",
+    "forge.MixinForgeChunkManager_PersistentChunkChecks",
     "forge.MixinLightUtil",
-    "forge.MixinNetworkEventFiringHandler",
+    "forge.MixinNetworkEventFiringHandler_FixMissingRelease",
     "forge.MixinVertexLighterFlat",
     "forge.inline.MixinAnimationModelBase",
     "forge.inline.MixinBlockInfo",
@@ -20,11 +20,13 @@
     "forge.inline.MixinFaceBakery",
     "forge.inline.MixinForgeBlockModelRenderer",
     "forge.inline.MixinModelFluid",
-    "inline.MixinBlockModelRenderer",
-    "inline.MixinRenderGlobal",
-    "inline.MixinRenderItem",
-    "inline.MixinWorld",
-    "renderer.MixinVertexFormat",
-    "world.MixinWorld"
+    "inline.MixinBlockModelRenderer_DirectValues",
+    "inline.MixinRenderGlobal_DirectValues",
+    "inline.MixinRenderItem_DirectValues",
+    "inline.MixinWorld_DirectValues",
+    "renderer.MixinVertexFormat_CacheHashcode",
+    "world.MixinChunk_FastTileEntityRemoval",
+    "world.MixinWorld_FastTileEntityRemoval",
+    "world.MixinWorld_PersistentChunkChecks"
   ]
 }

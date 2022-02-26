@@ -16,7 +16,7 @@ import java.util.List;
  * @author bs2609
  */
 @Mixin(VertexFormat.class)
-public class MixinVertexFormat {
+public class MixinVertexFormat_CacheHashcode {
 
     @Shadow
     @Final

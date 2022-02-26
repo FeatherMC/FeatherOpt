@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(BlockModelRenderer.class)
-public class MixinBlockModelRenderer {
+public class MixinBlockModelRenderer_DirectValues {
 
     @Redirect(method = "renderModelAmbientOcclusion", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/EnumFacing;values()[Lnet/minecraft/util/EnumFacing;"))
     private EnumFacing[] featherOpt$ambientOcclusion$getCachedArray() {

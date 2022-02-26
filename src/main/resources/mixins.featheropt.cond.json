@@ -1,8 +1,10 @@
 {
-  "forge.MixinBlockInfoCond": "patcher==0",
-  "forge.MixinFMLClientHandler": "patcher==0",
-  "forge.MixinForgeBlockModelRendererCond": "patcher==0",
-  "forge.MixinForgeHooksClient": "patcher==0",
-  "forge.MixinVertexLighterFlatCond": "patcher==0",
-  "forge.MixinVertexLighterSmoothAo": "patcher==0"
+  "forge.MixinBlockInfo_ShorterReferenceHolding": "patcher==0",
+  "forge.MixinFMLClientHandler_CacheCharMatcher": "patcher==0",
+  "forge.MixinFMLClientHandler_RemoveModAsResource": "patcher==0",
+  "forge.MixinForgeBlockModelRenderer_ShorterReferenceHolding": "patcher==0",
+  "forge.MixinForgeHooksClient_FixSkyBlendColour": "patcher==0",
+  "forge.MixinVertexLighterFlat_ShorterReferenceHolding": "patcher==0",
+  "forge.MixinVertexLighterFlat_ImprovedLightmap": "patcher==0",
+  "forge.MixinVertexLighterSmoothAo_ImprovedLightmap": "patcher==0"
 }

@@ -16,7 +16,7 @@ import java.util.Set;
  * @author mezzz
  */
 @Mixin(FluidRegistry.class)
-public abstract class MixinFluidRegistry {
+public abstract class MixinFluidRegistry_AvoidCopying {
     @Shadow(remap = false)
     static Set<Fluid> bucketFluids;
 

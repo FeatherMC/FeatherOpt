@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.Unique;
  * @author bs2609 & others
  */
 @Mixin(BlockInfo.class)
-public class MixinBlockInfoCond implements IBlockInfo {
+public class MixinBlockInfo_ShorterReferenceHolding implements IBlockInfo {
     @Shadow(remap = false)
     private IBlockAccess world;
     @Shadow(remap = false)
