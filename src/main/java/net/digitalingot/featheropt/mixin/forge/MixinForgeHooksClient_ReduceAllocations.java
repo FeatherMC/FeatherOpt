@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.Shadow;
  * https://github.com/MinecraftForge/MinecraftForge/commit/14f3120eedfee3bff4499ca64a62834c6e7ce3b7
  */
 @Mixin(ForgeHooksClient.class)
-public class MixinForgeHooksClient_FixSkyBlendColour {
+public class MixinForgeHooksClient_ReduceAllocations {
 
     @Shadow(remap = false)
     private static int skyX;

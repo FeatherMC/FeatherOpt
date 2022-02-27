@@ -1,6 +1,7 @@
-package net.digitalingot.featheropt.mixin.forge;
+package net.digitalingot.featheropt.mixin.client;
 
 import com.google.common.cache.LoadingCache;
+import net.digitalingot.featheropt.mixin.forge.MinecraftForgeClientAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.RegionRenderCache;

@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import net.minecraftforge.client.MinecraftForgeClient;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -36,7 +37,7 @@ public class FeatherOptMixinPlugin implements IMixinConfigPlugin {
     public void onLoad(String mixinPackage) {
         for (Map.Entry<String, String> entry : loadConditionals().entrySet()) {
             if (SOLVER.solve(entry.getValue())) {
-                FeatherOpt.LOGGER.info("Adding mixin: " + entry.getKey());
+                FeatherOpt.LOGGER.fine("Adding mixin: " + entry.getKey());
                 extraMixins.add(entry.getKey());
             }
         }

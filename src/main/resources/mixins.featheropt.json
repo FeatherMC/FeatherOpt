@@ -7,12 +7,15 @@
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "forge.MinecraftForgeClientAccessor",
     "forge.MixinASMDataTable_ParallelComputation",
     "forge.MixinExtendedBlockState_ImprovedPerformance",
     "forge.MixinFluidRegistry_AvoidCopying",
     "forge.MixinForgeChunkManager_PersistentChunkChecks",
+    "forge.MixinInvWrapper_ImprovedInsertionPerformance",
     "forge.MixinLightUtil_OptimizedAddingNormals",
     "forge.MixinNetworkEventFiringHandler_FixMissingRelease",
+    "forge.MixinSidedInvWrapper_ImprovedInsertionPerformance",
     "forge.MixinVertexLighterFlat_OptimizedAddingNormals",
     "forge.inline.MixinAnimationModelBase_AvoidCopying",
     "forge.inline.MixinBlockInfo_AvoidCopying",
@@ -27,9 +30,10 @@
     "renderer.MixinVertexFormat_CacheHashcode",
     "world.MixinChunk_FastTileEntityRemoval",
     "world.MixinWorld_FastTileEntityRemoval",
-    "world.MixinWorld_PersistentChunkChecks"
+    "world.MixinWorld_PersistentChunkChecks",
+    "world.MixinWorld_ReducedLightCheckRangeRequirements"
   ],
   "mixins": [
-    "forge.MinecraftForgeClientAccessor"
+    "world.MixinWorld_FastCollisionCheck"
   ]
 }

@@ -10,10 +10,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(value = MinecraftForgeClient.class, remap = false)
-public class MinecraftForgeClientAccessor {
+public interface MinecraftForgeClientAccessor {
 
     @Accessor("regionCache")
-    public static LoadingCache<Pair<World, BlockPos>, RegionRenderCache> featherOpt$getRegionCache() {
+    static LoadingCache<Pair<World, BlockPos>, RegionRenderCache> featherOpt$getRegionCache() {
         throw new AssertionError();
     }
 
