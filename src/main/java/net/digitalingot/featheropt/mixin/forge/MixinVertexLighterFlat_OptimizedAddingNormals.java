@@ -2,9 +2,7 @@ package net.digitalingot.featheropt.mixin.forge;
 
 import net.digitalingot.featheropt.helpers.IVertexLighterFlat;
 import net.digitalingot.featheropt.helpers.VertexLighterFlatHook;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.renderer.vertex.VertexFormat;
-import net.minecraft.client.renderer.vertex.VertexFormatElement;
 import net.minecraftforge.client.model.pipeline.IVertexConsumer;
 import net.minecraftforge.client.model.pipeline.QuadGatheringTransformer;
 import net.minecraftforge.client.model.pipeline.VertexLighterFlat;
@@ -24,7 +22,7 @@ import java.util.Objects;
  * @author bs2609 & ichttt
  */
 @Mixin(VertexLighterFlat.class)
-public abstract class MixinVertexLighterFlat extends QuadGatheringTransformer implements IVertexLighterFlat {
+public abstract class MixinVertexLighterFlat_OptimizedAddingNormals extends QuadGatheringTransformer implements IVertexLighterFlat {
     @Shadow(remap = false)
     protected int posIndex;
     @Shadow(remap = false)

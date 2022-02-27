@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentMap;
  * @author bs2609 & ichttt
  */
 @Mixin(LightUtil.class)
-public class MixinLightUtil {
+public class MixinLightUtil_OptimizedAddingNormals {
 
     @Unique
     private static final ConcurrentMap<Pair<VertexFormat, VertexFormat>, int[]> FEATHER_OPT$FORMAT_MAPS = new ConcurrentHashMap<>();
@@ -43,8 +43,8 @@ public class MixinLightUtil {
     }
 
     /**
-     * @author bs2609
-     * @reason Improve performance of vertex format mapping by caching hashcodes
+     * @author bs2609 & ichttt
+     * @reason Improve performance of vertex format mapping by caching hashcodes; plus cache default from & to
      */
     @Overwrite(remap = false)
     public static int[] mapFormats(VertexFormat from, VertexFormat to) {

@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * @author bs2609
  */
 @Mixin(BlockInfo.class)
-public class MixinBlockInfo {
+public class MixinBlockInfo_AvoidCopying {
     @Redirect(method = "updateLightMatrix", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/EnumFacing;values()[Lnet/minecraft/util/EnumFacing;"))
     private EnumFacing[] featherOpt$getCachedArray() {
         return Constants.FACINGS;

@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(World.class)
-public class MixinWorld_DirectValues {
+public class MixinWorld_AvoidCopying {
 
     @Redirect(method = "getRawLight", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/EnumFacing;values()[Lnet/minecraft/util/EnumFacing;"))
     public EnumFacing[] featherOpt$getRawLight$getCachedArray() {

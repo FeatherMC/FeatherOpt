@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.Overwrite;
  *
  * @author bs2609
  */
-@Mixin(VertexLighterSmoothAo.class)
+@Mixin(value = VertexLighterSmoothAo.class, remap = false)
 public class MixinVertexLighterSmoothAo_ImprovedLightmap extends VertexLighterFlat {
 
     /**

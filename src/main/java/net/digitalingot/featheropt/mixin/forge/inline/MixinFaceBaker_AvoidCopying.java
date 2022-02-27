@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(value = FaceBakery.class, remap = false)
-public class MixinFaceBakery {
+public class MixinFaceBaker_AvoidCopying {
 
     @Redirect(method = "getPositionsDiv16", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/EnumFacing;values()[Lnet/minecraft/util/EnumFacing;"))
     private EnumFacing[] featherOpt$getPositionsDiv16$getCachedArray() {
