@@ -28,5 +28,8 @@
     "world.MixinChunk_FastTileEntityRemoval",
     "world.MixinWorld_FastTileEntityRemoval",
     "world.MixinWorld_PersistentChunkChecks"
+  ],
+  "mixins": [
+    "forge.MinecraftForgeClientAccessor"
   ]
 }

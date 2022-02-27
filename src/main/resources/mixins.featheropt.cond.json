@@ -5,6 +5,7 @@
   "forge.MixinForgeBlockModelRenderer_ShorterReferenceHolding": "patcher==0",
   "forge.MixinForgeHooksClient_FixSkyBlendColour": "patcher==0",
   "forge.MixinVertexLighterFlat_ShorterReferenceHolding": "patcher==0",
+  "forge.MixinMinecraft_ShorterReferenceHolding": "patcher==0",
   "forge.MixinVertexLighterFlat_ImprovedLightmap": "patcher==0",
   "forge.MixinVertexLighterSmoothAo_ImprovedLightmap": "patcher==0"
 }
