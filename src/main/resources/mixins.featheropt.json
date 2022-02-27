@@ -32,8 +32,5 @@
     "world.MixinWorld_FastTileEntityRemoval",
     "world.MixinWorld_PersistentChunkChecks",
     "world.MixinWorld_ReducedLightCheckRangeRequirements"
-  ],
-  "mixins": [
-    "world.MixinWorld_FastCollisionCheck"
   ]
 }
