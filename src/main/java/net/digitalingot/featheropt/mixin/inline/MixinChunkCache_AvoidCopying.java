@@ -1,4 +1,4 @@
-package net.digitalingot.featheropt.mixin.forge.inline;
+package net.digitalingot.featheropt.mixin.inline;
 
 import net.digitalingot.featheropt.helpers.Constants;
 import net.minecraft.util.EnumFacing;

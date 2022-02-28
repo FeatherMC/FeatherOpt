@@ -109,6 +109,7 @@ jar {
         attributes "TweakClass": "org.spongepowered.asm.launch.MixinTweaker"
         attributes "TweakOrder": "0"
         attributes "MixinConfigs": "mixins.featheropt.json"
+        attributes "FMLAT": "featheropt_at.cfg"
     }
 }
 

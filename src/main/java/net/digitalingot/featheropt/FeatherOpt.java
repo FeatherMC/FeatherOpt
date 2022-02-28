@@ -5,13 +5,13 @@ import net.digitalingot.featheropt.config.FallbackConfigurationProvider;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = "featheropt", name = "FeatherOpt", version = "1.0.0-SNAPSHOT", clientSideOnly = true)
 public class FeatherOpt {
 
-    public static final Logger LOGGER = Logger.getLogger("FeatherOpt");
+    public static final Logger LOGGER = LogManager.getLogger("FeatherOpt");
     private ConfigurationProvider configurationProvider = new FallbackConfigurationProvider();
 
     @Mod.EventHandler

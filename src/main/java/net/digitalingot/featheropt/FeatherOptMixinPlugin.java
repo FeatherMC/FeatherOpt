@@ -37,7 +37,7 @@ public class FeatherOptMixinPlugin implements IMixinConfigPlugin {
     public void onLoad(String mixinPackage) {
         for (Map.Entry<String, String> entry : loadConditionals().entrySet()) {
             if (SOLVER.solve(entry.getValue())) {
-                FeatherOpt.LOGGER.fine("Adding mixin: " + entry.getKey());
+                FeatherOpt.LOGGER.debug("Adding mixin: " + entry.getKey());
                 extraMixins.add(entry.getKey());
             }
         }
@@ -76,7 +76,7 @@ public class FeatherOptMixinPlugin implements IMixinConfigPlugin {
         try {
             return loadConditionals0();
         } catch (Throwable throwable) {
-            FeatherOpt.LOGGER.warning("Failed to load conditionals, falling back to default. Cause: " + throwable);
+            FeatherOpt.LOGGER.warn("Failed to load conditionals, falling back to default. Cause: " + throwable);
             return Maps.newHashMap();
         }
     }

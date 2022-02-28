@@ -3,7 +3,7 @@
   "forge.MixinFMLClientHandler_CacheCharMatcher": "patcher==0",
   "forge.MixinFMLClientHandler_RemoveModAsResource": "patcher==0",
   "forge.MixinForgeBlockModelRenderer_ShorterReferenceHolding": "patcher==0",
-  "forge.MixinForgeHooksClient_ReduceAllocations": "patcher==0",
+  "forge.MixinForgeHooksClient_ReduceSkyBlendColorAllocations": "patcher==0",
   "forge.MixinVertexLighterFlat_ShorterReferenceHolding": "patcher==0",
   "client.MixinMinecraft_ShorterReferenceHolding": "patcher==0",
   "forge.MixinVertexLighterFlat_ImprovedLightmap": "patcher==0",
