@@ -24,7 +24,6 @@
     "forge.inline.MixinForgeBlockModelRenderer_AvoidCopying",
     "forge.inline.MixinModelFluid_AvoidCopying",
     "inline.MixinBlockModelRenderer_AvoidCopying",
-    "inline.MixinRenderGlobal_AvoidCopying",
     "inline.MixinRenderItem_AvoidCopying",
     "inline.MixinWorld_AvoidCopying",
     "renderer.MixinVertexFormat_CacheHashcode",
