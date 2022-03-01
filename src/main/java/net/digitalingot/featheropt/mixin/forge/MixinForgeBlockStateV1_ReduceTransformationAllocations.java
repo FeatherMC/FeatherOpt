@@ -26,7 +26,10 @@ public class MixinForgeBlockStateV1_ReduceTransformationAllocations {
     @Unique
     private String featherOpt$caughtTransform;
 
-    @Redirect(method = "deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraftforge/client/model/ForgeBlockStateV1$Variant;", at = @At(value = "NEW", target = "Lnet/minecraftforge/client/model/TRSRTransformation;<init>(Lnet/minecraft/client/resources/model/ModelRotation;)V"))
+    @Redirect(
+            method = "deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraftforge/client/model/ForgeBlockStateV1$Variant;",
+            at = @At(value = "NEW", target = "net/minecraftforge/client/model/TRSRTransformation")
+    )
     public TRSRTransformation featherOpt$deserialize$cacheTransformations(ModelRotation rotation) {
         return TRSRTransformationHook.from(rotation);
     }

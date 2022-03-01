@@ -24,9 +24,11 @@ public class MixinAnvilChunkLoader_FixMemoryLeak {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/nbt/CompressedStreamTools;read(Ljava/io/DataInputStream;)Lnet/minecraft/nbt/NBTTagCompound;")
     )
     public NBTTagCompound featherOpt$closeStream(DataInputStream inputStream) throws IOException {
-        NBTTagCompound read = CompressedStreamTools.read(inputStream);
-        inputStream.close();
-        return read;
+        try {
+            return CompressedStreamTools.read(inputStream);
+        } finally {
+            inputStream.close();
+        }
     }
 
 }

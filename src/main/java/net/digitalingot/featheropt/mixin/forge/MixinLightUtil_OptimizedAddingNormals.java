@@ -37,7 +37,7 @@ public class MixinLightUtil_OptimizedAddingNormals {
     private static final int[] FEATHER_OPT$DEFAULT_MAPPING = LightUtilHook.generateMapping(FEATHER_OPT$DEFAULT_FROM, FEATHER_OPT$DEFAULT_TO);
 
     @Redirect(method = "putBakedQuad", at = @At(value = "INVOKE", target = "Lcom/google/common/cache/LoadingCache;getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;", remap = false), remap = false)
-    private static <K, V> V featherOpt$putBakedQuad$redirectCacheAccess(LoadingCache<K, V> instance, K k) {
+    private static <K, V> V featherOpt$putBakedQuad$redirectCacheAccess(@SuppressWarnings("UnstableApiUsage") LoadingCache<K, V> instance, K k) {
         VertexFormat vertexFormat = (VertexFormat) k;
         return (V) mapFormats(vertexFormat, DefaultVertexFormats.ITEM);
     }

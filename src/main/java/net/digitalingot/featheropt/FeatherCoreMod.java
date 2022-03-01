@@ -12,7 +12,7 @@ import java.util.Map;
 public class FeatherCoreMod implements IFMLLoadingPlugin {
     @Override
     public String[] getASMTransformerClass() {
-        return new String[0];
+        return new String[]{FeatherOptAccessTransformer.class.getName()};
     }
 
     @Override

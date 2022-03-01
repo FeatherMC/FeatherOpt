@@ -19,7 +19,7 @@ public class MixinForgeHooksClient_ReduceTransformationAllocations {
 
     @Redirect(
             method = "applyTransform(Lnet/minecraft/client/renderer/block/model/ItemTransformVec3f;Lcom/google/common/base/Optional;)Lcom/google/common/base/Optional;",
-            at = @At(value = "NEW", target = "Lnet/minecraftforge/client/model/TRSRTransformation;<init>(Lnet/minecraft/client/renderer/block/model/ItemTransformVec3f;)V")
+            at = @At(value = "NEW", target = "net/minecraftforge/client/model/TRSRTransformation")
     )
     private static TRSRTransformation featherOpt$applyItemTransform$cacheTransformations(ItemTransformVec3f transform) {
         return TRSRTransformationHook.from(transform);

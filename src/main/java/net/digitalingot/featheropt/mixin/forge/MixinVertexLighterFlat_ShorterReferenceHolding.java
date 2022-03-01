@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.Shadow;
  *
  * @author bs2609
  */
-@Mixin(VertexLighterFlat.class)
+@Mixin(value = VertexLighterFlat.class, remap = false)
 public abstract class MixinVertexLighterFlat_ShorterReferenceHolding extends QuadGatheringTransformer implements IVertexLighterFlat {
 
     @Shadow
