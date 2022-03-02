@@ -2,6 +2,9 @@ package net.digitalingot.featheropt;
 
 import net.digitalingot.featheropt.config.ConfigurationProvider;
 import net.digitalingot.featheropt.config.FallbackConfigurationProvider;
+import net.digitalingot.featheropt.mixin.client.AccessorMinecraft;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BlockModelRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -20,6 +23,12 @@ public class FeatherOpt {
 
         // fix mixin bug with static accessors: https://github.com/SpongePowered/Mixin/issues/342
         MinecraftForgeClient.getRenderLayer();
+        reload();
+    }
+
+    public void reload() {
+        Minecraft mc = Minecraft.getMinecraft();
+        ((AccessorMinecraft) mc).setEnableGLErrorChecking(!configurationProvider.isGLErrorCheckDisabled());
     }
 
     public ConfigurationProvider getConfigurationProvider() {

@@ -9,7 +9,12 @@
   "client": [
     "block.MixinBlockLiquid_BlockPosPool",
     "block.MixinBlockRedstoneTorch_FixMemoryLeak",
-    "block.MixinEnumFacing_ReduceIteratorAllocations",
+    "block.MixinBlockState_FasterLookup",
+    "block.MixinEnumFacing_ReduceAllocations",
+    "block.MixinPropertyBool_ConstantAllowedValues",
+    "block.MixinPropertyHelper_CacheHashcode",
+    "block.MixinPropertyInteger_CacheHashcode",
+    "client.AccessorMinecraft",
     "enchantment.MixinEnchantmentHelper_FixMemoryLeak",
     "entity.MixinEntity_BlockPosPool",
     "entity.MixinEntityList_CacheConstructors",
@@ -50,5 +55,8 @@
     "world.MixinWorld_FastTileEntityRemoval",
     "world.MixinWorld_PersistentChunkChecks",
     "world.MixinWorld_ReducedLightCheckRangeRequirements"
+  ],
+  "mixins": [
+    "entity.MixinBaseAttribute_CacheHashcode"
   ]
 }

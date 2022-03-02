@@ -38,7 +38,10 @@ public class MixinBlockModelRenderer_BlockPosPool {
 
     @ModifyVariable(
             method = "updateVertexBrightness",
-            at = @At(value = "STORE", ordinal = 1),
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/BlockPos;offset(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/BlockPos;", ordinal = 0),
+            slice = @Slice(
+                    from = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/BlockModelRenderer$EnumNeighborInfo;getNeighbourInfo(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/client/renderer/BlockModelRenderer$EnumNeighborInfo;", ordinal = 0)
+            ),
             ordinal = 1
     )
     public BlockPos featherOpt$usePool$first$ternaryFalse(BlockPos instance) {
@@ -54,6 +57,7 @@ public class MixinBlockModelRenderer_BlockPosPool {
             at = @At(value = "INVOKE",
                     target = "Lnet/minecraft/util/BlockPos;offset(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/BlockPos;"),
             slice = @Slice(
+                    from = @At(value = "INVOKE", target = "Lnet/minecraft/util/BlockPos;offset(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/BlockPos;", ordinal = 0, shift = At.Shift.AFTER),
                     to = @At(value = "INVOKE", target = "Lnet/minecraft/util/BlockPos;offset(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/BlockPos;", ordinal = 2, shift = At.Shift.AFTER)
             )
     )
@@ -136,9 +140,9 @@ public class MixinBlockModelRenderer_BlockPosPool {
                     from = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;getAmbientOcclusionLightValue()F", ordinal = 5, shift = At.Shift.BEFORE)
             )
     )
-    public int featherOpt$getMixedBrightnessForBlock$releaseSecond(Block instance, IBlockAccess p_getMixedBrightnessForBlock_1_, BlockPos associatedBlockPos) {
-        try (AssociatedMutableBlockPos blockPos = ((AssociatedMutableBlockPos.Companion) associatedBlockPos).getParent()) {
-            return instance.getMixedBrightnessForBlock(p_getMixedBrightnessForBlock_1_, blockPos);
+    public int featherOpt$getMixedBrightnessForBlock$releaseSecond(Block instance, IBlockAccess blockAccess, BlockPos companion) {
+        try (AssociatedMutableBlockPos parent = ((AssociatedMutableBlockPos.Companion) companion).getParent()) {
+            return instance.getMixedBrightnessForBlock(blockAccess, parent);
         }
     }
 
