@@ -15,7 +15,7 @@ public class MixinBaseAttribute_CacheHashcode {
     @Unique
     private int featherOpt$cachedHashcode;
 
-    @Inject(method = "<init>", at = @At("TAIL"))
+    @Inject(method = "<init>", at = @At("RETURN"))
     private void featherOpt$cacheHashcode(IAttribute p_i45892_1_, String p_i45892_2_, double p_i45892_3_, CallbackInfo ci) {
         this.featherOpt$cachedHashcode = this.hashCode();
     }

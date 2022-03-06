@@ -23,7 +23,7 @@ public class MixinBlockModelRenderer_BlockPosPool {
             argsOnly = true
     )
     public BlockPos featherOpt$getFromPool$first(BlockPos instance) {
-        return AssociatedMutableBlockPos.get(instance);
+        return AssociatedMutableBlockPos.get(instance).associateWithOwnBlockPos();
     }
 
     @Redirect(
@@ -32,24 +32,18 @@ public class MixinBlockModelRenderer_BlockPosPool {
                     target = "Lnet/minecraft/util/BlockPos;offset(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/BlockPos;", ordinal = 0
             )
     )
-    public BlockPos featherOpt$usePool$first$ternaryTrue(BlockPos instance, EnumFacing offset) {
-        return ((AssociatedMutableBlockPos) instance).associateWithOwnBlockPos().move(offset);
+    public BlockPos featherOpt$usePool$first(BlockPos instance, EnumFacing offset) {
+        return ((AssociatedMutableBlockPos.Companion) instance).move(offset);
     }
 
     @ModifyVariable(
             method = "updateVertexBrightness",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/BlockPos;offset(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/BlockPos;", ordinal = 0),
-            slice = @Slice(
-                    from = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/BlockModelRenderer$EnumNeighborInfo;getNeighbourInfo(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/client/renderer/BlockModelRenderer$EnumNeighborInfo;", ordinal = 0)
-            ),
-            ordinal = 1
+            at = @At(value = "INVOKE",
+                    target = "Lnet/minecraft/client/renderer/BlockModelRenderer$EnumNeighborInfo;getNeighbourInfo(Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/client/renderer/BlockModelRenderer$EnumNeighborInfo;", shift = At.Shift.AFTER),
+            argsOnly = true
     )
-    public BlockPos featherOpt$usePool$first$ternaryFalse(BlockPos instance) {
-        if (instance instanceof AssociatedMutableBlockPos) {
-            return ((AssociatedMutableBlockPos) instance).associateWithOwnBlockPos();
-        } else {
-            return instance;
-        }
+    public BlockPos featherOpt$setFirstToParent(BlockPos instance) {
+        return ((AssociatedMutableBlockPos.Companion) instance).getParent();
     }
 
     @Redirect(

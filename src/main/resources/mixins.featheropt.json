@@ -7,7 +7,6 @@
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "block.MixinBlockLiquid_BlockPosPool",
     "block.MixinBlockRedstoneTorch_FixMemoryLeak",
     "block.MixinBlockState_FasterLookup",
     "block.MixinEnumFacing_ReduceAllocations",
@@ -16,7 +15,7 @@
     "block.MixinPropertyInteger_CacheHashcode",
     "client.AccessorMinecraft",
     "enchantment.MixinEnchantmentHelper_FixMemoryLeak",
-    "entity.MixinEntity_BlockPosPool",
+    "entity.MixinBaseAttribute_CacheHashcode",
     "entity.MixinEntityList_CacheConstructors",
     "forge.MinecraftForgeClientAccessor",
     "forge.MixinASMDataTable_ParallelComputation",
@@ -45,18 +44,12 @@
     "inline.MixinFaceBakery_AvoidCopying",
     "inline.MixinRenderItem_AvoidCopying",
     "inline.MixinWorld_AvoidCopying",
-    "renderer.MixinBlockModelRenderer_BlockPosPool",
-    "renderer.MixinRenderGlobal_BlockPosPool",
     "renderer.MixinVertexFormat_CacheHashcode",
     "resources.AccessorSimpleResource",
     "world.MixinAnvilChunkLoader_FixMemoryLeak",
     "world.MixinChunk_FastTileEntityRemoval",
-    "world.MixinWorld_BlockPosPool",
     "world.MixinWorld_FastTileEntityRemoval",
     "world.MixinWorld_PersistentChunkChecks",
     "world.MixinWorld_ReducedLightCheckRangeRequirements"
-  ],
-  "mixins": [
-    "entity.MixinBaseAttribute_CacheHashcode"
   ]
 }

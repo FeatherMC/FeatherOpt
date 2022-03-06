@@ -15,7 +15,7 @@ public class MixinPropertyHelper_CacheHashcode implements ICachedHashcode {
     @Unique
     private int featherOpt$cachedHashcode;
 
-    @Inject(method = "<init>", at = @At("TAIL"))
+    @Inject(method = "<init>", at = @At("RETURN"))
     private void featherOpt$cacheHashcode(String p_i45652_1_, Class<?> p_i45652_2_, CallbackInfo ci) {
         this.featherOpt$cachedHashcode = this.hashCode();
     }
