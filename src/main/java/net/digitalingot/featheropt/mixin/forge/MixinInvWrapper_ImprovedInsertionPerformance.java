@@ -53,7 +53,7 @@ public class MixinInvWrapper_ImprovedInsertionPerformance {
             cancellable = true
     )
     public void featherOpt$addFasterCountCheck(int slot, ItemStack stack, boolean simulate, CallbackInfoReturnable<ItemStack> cir) {
-        if (featherOpt$caughtStackInSlot.stackSize >= Math.min(featherOpt$caughtStackInSlot.getMaxStackSize(), inv.getInventoryStackLimit())) {
+        if (featherOpt$caughtStackInSlot != null && featherOpt$caughtStackInSlot.stackSize >= Math.min(featherOpt$caughtStackInSlot.getMaxStackSize(), inv.getInventoryStackLimit())) {
             cir.setReturnValue(stack);
         }
     }
